@@ -14,7 +14,7 @@ class SetEnvVariable extends Command
      *
      * @var string
      */
-    protected $signature = 'env:set2
+    protected $signature = 'env:set
                             {variable : The variable of the .env file to change}
                             {value : The value of the variable}';
 
