@@ -1,5 +1,5 @@
 {
-    "name": "andresdevr/laravel-env-cli",
+    "name": "andreslqr/laravel-env-cli",
     "description": "This package allows to update the .env file from your laravel project via terminal",
     "keywords": [
         "laravel",
@@ -9,11 +9,11 @@
     ],
     "autoload": {
         "psr-4": {
-            "Andresdevr\\EnvCli\\": "src/"
+            "Andreslqr\\EnvCli\\": "src/"
         }
     },
     "authors": [{
-        "name": "andresdevr",
+        "name": "Andreslqr",
         "email": "andres22.dev@gmail.com"
     }],
     "require-dev": {
@@ -26,7 +26,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Andresdevr\\EnvCli\\EnvCliServiceProvider"
+                "Andreslqr\\EnvCli\\EnvCliServiceProvider"
             ],
             "aliases": []
         }

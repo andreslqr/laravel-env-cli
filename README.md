@@ -7,7 +7,7 @@ Laravel is a package to allows update the .env file from your laravel project vi
 Use the package manager [composer](https://getcomposer.org/) to install Laravel Env CLi.
 
 ```bash
-composer require andresdevr/laravel-env-cli
+composer require Andreslqr/laravel-env-cli
 ```
 
 ## Usage

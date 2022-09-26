@@ -1,6 +1,6 @@
 <?php
 
-namespace Andresdevr\EnvCli\Console;
+namespace Andreslqr\EnvCli\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Collection;
@@ -14,7 +14,7 @@ class SetEnvVariable extends Command
      *
      * @var string
      */
-    protected $signature = 'env:set
+    protected $signature = 'env:set2
                             {variable : The variable of the .env file to change}
                             {value : The value of the variable}';
 
@@ -42,6 +42,7 @@ class SetEnvVariable extends Command
      */
     public function handle()
     {
+        dd(456);
         $variables = $this->getEnvData();
 
         $variable = $this->argument('variable');
@@ -66,7 +67,7 @@ class SetEnvVariable extends Command
     private function getEnvData() : Collection
     {
         if(File::exists(base_path('.env')))
-            return Collection::make(explode("\n", file_get_contents(base_path('.env'))))->filter()->mapWithKeys(function($item) : array {
+            return Collection::make(explode("\n", file_get_contents(base_path('.env'))))->mapWithKeys(function($item) : array {
                 $data = explode('=', $item);
                 $key = $data[0];
                 $value = isset($data[1]) ? $data[1] : "";

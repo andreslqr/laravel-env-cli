@@ -1,8 +1,8 @@
 <?php
 
-namespace Andresdevr\EnvCli;
+namespace Andreslqr\EnvCli;
 
-use Andresdevr\EnvCli\Console\SetEnvVariable;
+use Andreslqr\EnvCli\Console\SetEnvVariable;
 use Illuminate\Support\ServiceProvider;
 
 class EnvCliServiceProvider extends ServiceProvider
