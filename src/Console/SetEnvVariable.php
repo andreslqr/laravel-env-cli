@@ -42,7 +42,6 @@ class SetEnvVariable extends Command
      */
     public function handle()
     {
-        dd(456);
         $variables = $this->getEnvData();
 
         $variable = $this->argument('variable');
@@ -67,7 +66,11 @@ class SetEnvVariable extends Command
     private function getEnvData() : Collection
     {
         if(File::exists(base_path('.env')))
-            return Collection::make(explode("\n", file_get_contents(base_path('.env'))))->mapWithKeys(function($item) : array {
+            return Collection::make(explode("\n", file_get_contents(base_path('.env'))))->mapWithKeys(function($item, $key) : array {
+                
+                if(empty($item))
+                    return [$key => $item];
+                
                 $data = explode('=', $item);
                 $key = $data[0];
                 $value = isset($data[1]) ? $data[1] : "";
@@ -89,7 +92,7 @@ class SetEnvVariable extends Command
     {
         file_put_contents(base_path('.env'), null);
         $data->each(function($value, $variable) : void {
-            file_put_contents(base_path('.env'), "$variable=$value\n", FILE_APPEND);
+            file_put_contents(base_path('.env'), is_int($variable) ? "$value\n" : "$variable=$value\n", FILE_APPEND);
         });
     }
 
